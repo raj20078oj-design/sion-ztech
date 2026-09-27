@@ -546,27 +546,26 @@
            FOOTER
         ================================= */
 
-<footer>
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 25px 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
 
-    <div class="container footer-content">
+        .footer-content a {
+            color: #c6d3e5;
+            transition: 0.2s;
+        }
 
-        <div>
-            © 2026 Sion-Ztech. All rights reserved.
-        </div>
+        .footer-content a:hover {
+            color: var(--cyan);
+        }
 
-        <div>
-            <a href="privacy.html">Privacy Policy</a>
-            &nbsp; | &nbsp;
-            <a href="terms.html">Terms & Conditions</a>
-            &nbsp; | &nbsp;
-            <a href="refund.html">Refund Policy</a>
-            &nbsp; | &nbsp;
-            <a href="contact.html">Contact</a>
-        </div>
-
-    </div>
-
-</footer>
 
         /* ================================
            MOBILE
@@ -599,6 +598,11 @@
                 padding: 30px;
             }
 
+            .footer-content {
+                text-align: center;
+                justify-content: center;
+            }
+
         }
 
         @media (max-width: 500px) {
@@ -621,6 +625,12 @@
 
             .hero-buttons .btn {
                 text-align: center;
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
             }
 
         }
@@ -1194,7 +1204,13 @@
             </div>
 
             <div>
-                Technology • Cybersecurity • Digital Solutions
+                <a href="privacy.html">Privacy Policy</a>
+                &nbsp; | &nbsp;
+                <a href="terms.html">Terms &amp; Conditions</a>
+                &nbsp; | &nbsp;
+                <a href="refund.html">Refund Policy</a>
+                &nbsp; | &nbsp;
+                <a href="contact.html">Contact</a>
             </div>
 
         </div>
