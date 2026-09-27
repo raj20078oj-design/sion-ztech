@@ -7,19 +7,22 @@
     <meta name="description"
           content="Contact Sion-Ztech for technology, cybersecurity and digital solution enquiries.">
 
+    <meta name="theme-color" content="#070b14">
+
     <title>Contact | Sion-Ztech</title>
 
     <style>
         :root {
             --bg: #070b14;
             --card: #0e1726;
-            --card2: #091321;
+            --card-dark: #091321;
             --text: #f3f7ff;
             --muted: #9baac0;
             --line: #20334d;
             --blue: #3b82f6;
             --cyan: #22d3ee;
-            --success: #4ade80;
+            --green: #4ade80;
+            --danger: #fb7185;
         }
 
         * {
@@ -37,12 +40,12 @@
             background:
                 radial-gradient(
                     circle at 80% 5%,
-                    rgba(34, 211, 238, .12),
+                    rgba(34, 211, 238, 0.12),
                     transparent 30%
                 ),
                 radial-gradient(
                     circle at 10% 80%,
-                    rgba(59, 130, 246, .08),
+                    rgba(59, 130, 246, 0.08),
                     transparent 30%
                 ),
                 var(--bg);
@@ -56,16 +59,24 @@
             color: inherit;
         }
 
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
         .container {
             width: min(1050px, 92%);
             margin: auto;
         }
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             border-bottom: 1px solid var(--line);
-            background: rgba(7, 11, 20, .92);
+            background: rgba(7, 11, 20, 0.94);
         }
 
         .nav {
@@ -79,7 +90,7 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            letter-spacing: -.5px;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
@@ -89,14 +100,16 @@
         .back {
             color: #b8c7da;
             font-size: 14px;
-            transition: .2s;
+            transition: 0.2s ease;
         }
 
         .back:hover {
-            color: white;
+            color: #ffffff;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             text-align: center;
@@ -117,13 +130,20 @@
         }
 
         .gradient {
-            background: linear-gradient(90deg, #fff, #6de4ff);
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #6de4ff
+            );
+
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        /* CONTACT GRID */
+        /* =========================
+           CONTACT GRID
+        ========================= */
 
         .contact-grid {
             display: grid;
@@ -133,16 +153,17 @@
         }
 
         .card {
-            background: rgba(14, 23, 38, .94);
+            background: rgba(14, 23, 38, 0.95);
             border: 1px solid var(--line);
             border-radius: 18px;
             padding: 30px;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, .18);
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.18);
         }
 
         .card h2 {
-            margin-bottom: 12px;
             font-size: 25px;
+            margin-bottom: 12px;
         }
 
         .card > p {
@@ -150,7 +171,9 @@
             font-size: 14px;
         }
 
-        /* CONTACT INFO */
+        /* =========================
+           INFORMATION BOXES
+        ========================= */
 
         .info {
             margin-top: 25px;
@@ -161,12 +184,12 @@
             margin-bottom: 12px;
             border: 1px solid var(--line);
             border-radius: 12px;
-            background: var(--card2);
-            transition: .2s;
+            background: var(--card-dark);
+            transition: 0.2s ease;
         }
 
         .info-box:hover {
-            border-color: rgba(34, 211, 238, .45);
+            border-color: rgba(34, 211, 238, 0.45);
             transform: translateY(-2px);
         }
 
@@ -189,7 +212,9 @@
             text-decoration: underline;
         }
 
-        /* FORM */
+        /* =========================
+           FORM
+        ========================= */
 
         form {
             margin-top: 20px;
@@ -208,12 +233,11 @@
             padding: 13px;
             border-radius: 9px;
             border: 1px solid var(--line);
-            background: var(--card2);
-            color: white;
+            background: var(--card-dark);
+            color: #ffffff;
             outline: none;
-            font-family: inherit;
             font-size: 14px;
-            transition: .2s;
+            transition: 0.2s ease;
         }
 
         input::placeholder,
@@ -224,7 +248,8 @@
         input:focus,
         textarea:focus {
             border-color: var(--cyan);
-            box-shadow: 0 0 0 3px rgba(34, 211, 238, .08);
+            box-shadow:
+                0 0 0 3px rgba(34, 211, 238, 0.08);
         }
 
         textarea {
@@ -232,27 +257,52 @@
             resize: vertical;
         }
 
+        /* =========================
+           BUTTON
+        ========================= */
+
         .btn {
             display: inline-block;
             margin-top: 20px;
             padding: 13px 22px;
             border-radius: 10px;
-            background: linear-gradient(135deg, var(--blue), var(--cyan));
-            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--cyan)
+                );
+            color: #ffffff;
             font-weight: 700;
+            font-size: 14px;
             border: 0;
             cursor: pointer;
-            font-size: 14px;
-            transition: .2s;
+            transition: 0.2s ease;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(34, 211, 238, .18);
+            box-shadow:
+                0 8px 25px rgba(34, 211, 238, 0.18);
         }
 
         .btn:active {
             transform: translateY(0);
+        }
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            background: rgba(74, 222, 128, 0.07);
+            color: var(--green);
+            font-size: 13px;
         }
 
         .notice {
@@ -267,7 +317,9 @@
             font-size: 11px;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             margin-top: 45px;
@@ -293,27 +345,16 @@
 
         .footer-links a {
             color: #9baac0;
-            transition: .2s;
+            transition: 0.2s ease;
         }
 
         .footer-links a:hover {
-            color: white;
+            color: #ffffff;
         }
 
-        /* SUCCESS MESSAGE */
-
-        .success-message {
-            display: none;
-            margin-top: 15px;
-            padding: 12px 14px;
-            border-radius: 10px;
-            border: 1px solid rgba(74, 222, 128, .3);
-            background: rgba(74, 222, 128, .07);
-            color: var(--success);
-            font-size: 13px;
-        }
-
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 750px) {
 
@@ -361,12 +402,12 @@
 
         @media (max-width: 430px) {
 
-            .hero h1 {
-                font-size: 34px;
-            }
-
             .hero {
                 padding-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
             }
 
             .card {
@@ -380,293 +421,383 @@
     </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-<nav>
-    <div class="container nav">
+    <nav>
+        <div class="container nav">
 
-        <a href="index.html" class="logo">
-            Sion-<span>Ztech</span>
-        </a>
+            <a href="index.html" class="logo">
+                Sion-<span>Ztech</span>
+            </a>
 
-        <a href="index.html" class="back">
-            ← Back to Home
-        </a>
+            <a href="index.html" class="back">
+                ← Back to Home
+            </a>
 
-    </div>
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="container">
-
-        <h1>
-            Contact <span class="gradient">Sion-Ztech</span>
-        </h1>
-
-        <p>
-            Have a question about our cybersecurity resources,
-            technology projects or digital solutions?
-            Get in touch with us.
-        </p>
-
-    </div>
-
-</header>
+        </div>
+    </nav>
 
 
-<!-- CONTACT SECTION -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-<section>
+    <header class="hero">
 
-    <div class="container contact-grid">
+        <div class="container">
 
-        <!-- CONTACT INFORMATION -->
-
-        <div class="card">
-
-            <h2>
-                Get in Touch
-            </h2>
+            <h1>
+                Contact
+                <span class="gradient">
+                    Sion-Ztech
+                </span>
+            </h1>
 
             <p>
-                For general enquiries, product questions
-                or collaboration opportunities, use the
-                contact details provided here.
+                Have a question about our cybersecurity
+                resources, technology projects or digital
+                solutions? Get in touch with us.
             </p>
 
-            <div class="info">
+        </div>
 
-                <div class="info-box">
-
-                    <strong>
-                        📧 Email
-                    </strong>
-
-                    <a
-                        href="mailto:raj20078oj@gmail.com"
-                        class="email-link"
-                    >
-                        raj20078oj@gmail.com
-                    </a>
-
-                </div>
+    </header>
 
 
-                <div class="info-box">
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
 
-                    <strong>
-                        🌐 Website
-                    </strong>
+    <section>
 
-                    <span>
-                        Sion-Ztech
-                    </span>
+        <div class="container contact-grid">
 
-                </div>
+            <!-- LEFT SIDE -->
+
+            <div class="card">
+
+                <h2>
+                    Get in Touch
+                </h2>
+
+                <p>
+                    For general enquiries, product questions
+                    or collaboration opportunities, use the
+                    contact details provided here.
+                </p>
 
 
-                <div class="info-box">
+                <div class="info">
 
-                    <strong>
-                        🔐 Focus
-                    </strong>
+                    <!-- EMAIL -->
 
-                    <span>
-                        Technology • Cybersecurity •
-                        Digital Solutions
-                    </span>
+                    <div class="info-box">
+
+                        <strong>
+                            📧 Email
+                        </strong>
+
+                        <a
+                            href="mailto:raj20078oj@gmail.com"
+                            class="email-link"
+                        >
+                            raj20078oj@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <!-- WEBSITE -->
+
+                    <div class="info-box">
+
+                        <strong>
+                            🌐 Website
+                        </strong>
+
+                        <span>
+                            Sion-Ztech
+                        </span>
+
+                    </div>
+
+
+                    <!-- FOCUS -->
+
+                    <div class="info-box">
+
+                        <strong>
+                            🔐 Focus
+                        </strong>
+
+                        <span>
+                            Technology • Cybersecurity •
+                            Digital Solutions
+                        </span>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="card">
+
+                <h2>
+                    Send a Message
+                </h2>
+
+                <p>
+                    Enter your details and message below.
+                    When you click Send Message, your email
+                    application will open with the message
+                    prepared for Sion-Ztech.
+                </p>
 
 
-        <!-- CONTACT FORM -->
+                <!-- CONTACT FORM -->
 
-        <div class="card">
+                <form id="contactForm">
 
-            <h2>
-                Send a Message
-            </h2>
+                    <!-- NAME -->
 
-            <p>
-                Enter your details and message below.
-                Clicking Send Message will open your
-                email application with the message prepared
-                for Sion-Ztech.
-            </p>
+                    <label for="name">
+                        Your Name
+                    </label>
 
-            <form id="contactForm">
-
-                <label for="name">
-                    Your Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    autocomplete="name"
-                    required
-                >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
 
 
-                <label for="email">
-                    Email Address
-                </label>
+                    <!-- EMAIL -->
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    autocomplete="email"
-                    required
-                >
+                    <label for="email">
+                        Email Address
+                    </label>
 
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Write your message..."
-                    required
-                ></textarea>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
 
 
-                <button
-                    type="submit"
-                    class="btn"
-                >
-                    Send Message
-                </button>
+                    <!-- MESSAGE -->
 
-                <div
-                    id="successMessage"
-                    class="success-message"
-                >
-                    Your email message has been prepared.
-                    Please press Send in your email application
-                    to complete the submission.
-                </div>
+                    <label for="message">
+                        Message
+                    </label>
 
-                <div class="notice">
-                    Your message will be addressed to
-                    raj20078oj@gmail.com.
-                </div>
-
-                <div class="privacy-note">
-                    Please do not include passwords,
-                    payment information or other sensitive
-                    personal information in your message.
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
 
 
-<!-- FOOTER -->
+                    <!-- BUTTON -->
 
-<footer>
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Send Message
+                    </button>
 
-    <div class="container footer">
 
-        <div>
-            © 2026 Sion-Ztech. All rights reserved.
-        </div>
+                    <!-- SUCCESS MESSAGE -->
 
-        <div class="footer-links">
+                    <div
+                        id="successMessage"
+                        class="success-message"
+                    >
+                        Your email has been prepared.
+                        Please press Send in your email
+                        application to complete the submission.
+                    </div>
 
-            <a href="privacy.html">
-                Privacy Policy
-            </a>
 
-            <a href="terms.html">
-                Terms & Conditions
-            </a>
+                    <!-- NOTICE -->
 
-            <a href="refund.html">
-                Refund Policy
-            </a>
+                    <div class="notice">
+                        Messages are addressed to
+                        raj20078oj@gmail.com.
+                    </div>
 
-            <a href="contact.html">
-                Contact
-            </a>
+                    <div class="privacy-note">
+                        Please do not include passwords,
+                        payment information or other sensitive
+                        personal information.
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
 
-    </div>
-
-</footer>
+    </section>
 
 
-<!-- JAVASCRIPT -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-<script>
+    <footer>
 
-const contactForm = document.getElementById("contactForm");
+        <div class="container footer">
 
-const successMessage =
-    document.getElementById("successMessage");
+            <div>
+                © 2026 Sion-Ztech. All rights reserved.
+            </div>
 
-contactForm.addEventListener("submit", function(event) {
+            <div class="footer-links">
 
-    event.preventDefault();
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
 
-    const name =
-        document.getElementById("name").value.trim();
+                <a href="terms.html">
+                    Terms &amp; Conditions
+                </a>
 
-    const email =
-        document.getElementById("email").value.trim();
+                <a href="refund.html">
+                    Refund Policy
+                </a>
 
-    const message =
-        document.getElementById("message").value.trim();
+                <a href="contact.html">
+                    Contact
+                </a>
 
-    if (!name || !email || !message) {
-        return;
-    }
+            </div>
 
-    const subject =
-        encodeURIComponent(
-            "Sion-Ztech Website Enquiry - " + name
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
+
+
+                /* CHECK FORM */
+
+                if (!name || !email || !message) {
+
+                    return;
+
+                }
+
+
+                /* EMAIL SUBJECT */
+
+                const subject =
+                    encodeURIComponent(
+                        "Sion-Ztech Website Enquiry - " +
+                        name
+                    );
+
+
+                /* EMAIL BODY */
+
+                const body =
+                    encodeURIComponent(
+                        "Hello Sion-Ztech," +
+                        "\n\n" +
+                        "Name: " +
+                        name +
+                        "\n" +
+                        "Email: " +
+                        email +
+                        "\n\n" +
+                        "Message:" +
+                        "\n" +
+                        message +
+                        "\n\n" +
+                        "Sent from the Sion-Ztech website."
+                    );
+
+
+                /* MAILTO */
+
+                const mailto =
+                    "mailto:raj20078oj@gmail.com" +
+                    "?subject=" +
+                    subject +
+                    "&body=" +
+                    body;
+
+
+                /* SHOW MESSAGE */
+
+                successMessage.style.display =
+                    "block";
+
+
+                /* OPEN EMAIL APPLICATION */
+
+                window.location.href =
+                    mailto;
+
+            }
         );
 
-    const body =
-        encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\n\nMessage:\n" + message
-        );
-
-    const mailto =
-        "mailto:raj20078oj@gmail.com" +
-        "?subject=" + subject +
-        "&body=" + body;
-
-    successMessage.style.display = "block";
-
-    window.location.href = mailto;
-
-});
-
-</script>
+    </script>
 
 </body>
 </html>
