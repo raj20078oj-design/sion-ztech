@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Sion-Ztech Cybersecurity Beginner Toolkit - Learn cybersecurity fundamentals, phishing awareness, password security and safe browsing.">
+
+    <title>Cybersecurity Beginner Toolkit | Sion-Ztech</title>
+
+    <style>
+
+        :root {
+            --bg: #070b14;
+            --card: #0e1726;
+            --card2: #111d30;
+            --text: #f3f7ff;
+            --muted: #9baac0;
+            --line: #20334d;
+            --blue: #3b82f6;
+            --cyan: #22d3ee;
+            --green: #34d399;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 80% 5%,
+                    rgba(34,211,238,.12),
+                    transparent 30%
+                ),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(7,11,20,.88);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .nav {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--cyan);
+        }
+
+        .home-link {
+            color: #c6d3e5;
+            font-size: 14px;
+        }
+
+        .home-link:hover {
+            color: white;
+        }
+
+        /* BUTTON */
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--cyan)
+                );
+
+            color: white;
+            font-weight: 700;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #315071;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 95px 0 70px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 999px;
+
+            background: #0c1b2d;
+            border: 1px solid #294b70;
+
+            color: #9edfff;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1.08;
+
+            margin-bottom: 20px;
+        }
+
+        .gradient {
+            background:
+                linear-gradient(
+                    90deg,
+                    white,
+                    #6de4ff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 18px;
+        }
+
+        /* PRODUCT */
+
+        .product {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr
+                .8fr;
+
+            gap: 35px;
+
+            align-items: center;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #101e33,
+                    #09111d
+                );
+
+            border: 1px solid #294967;
+
+            border-radius: 24px;
+        }
+
+        .product h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .product p {
+            color: var(--muted);
+        }
+
+        .price {
+            font-size: 46px;
+            font-weight: 800;
+
+            margin: 18px 0;
+        }
+
+        .product-card {
+            padding: 30px;
+
+            background: #091321;
+
+            border: 1px solid var(--line);
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .shield {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: var(--muted);
+        }
+
+        /* CONTENT GRID */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .card {
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--line);
+
+            border-radius: 17px;
+
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #315d88;
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* CHECKLIST */
+
+        .checklist {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .check {
+            display: flex;
+            gap: 14px;
+
+            padding: 17px;
+
+            margin-bottom: 10px;
+
+            background: var(--card);
+
+            border: 1px solid var(--line);
+
+            border-radius: 12px;
+        }
+
+        .check-icon {
+            color: var(--green);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* FAQ */
+
+        .faq {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        details {
+            background: var(--card);
+
+            border: 1px solid var(--line);
+
+            border-radius: 12px;
+
+            padding: 18px 20px;
+
+            margin-bottom: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        details p {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+
+            padding: 55px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0e2138,
+                    #09121f
+                );
+
+            border: 1px solid var(--line);
+
+            border-radius: 24px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 70px;
+
+            padding: 28px 0;
+
+            border-top: 1px solid var(--line);
+
+            color: #8494aa;
+
+            font-size: 13px;
+        }
+
+        .footer {
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .product {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .product {
+                padding: 28px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            Sion-<span>Ztech</span>
+        </a>
+
+        <a href="index.html" class="home-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <span class="badge">
+            Sion-Ztech • Digital Product
+        </span>
+
+        <h1>
+            Cybersecurity
+            <span class="gradient">
+                Beginner Toolkit
+            </span>
+        </h1>
+
+        <p>
+            Learn the fundamentals of cybersecurity,
+            understand common online threats and develop
+            safer digital habits with beginner-friendly resources.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- PRODUCT INTRO -->
+
+<section>
+
+    <div class="container">
+
+        <div class="product">
+
+            <div>
+
+                <span class="badge">
+                    Beginner Friendly
+                </span>
+
+                <h2>
+                    Start Your Cybersecurity Journey
+                </h2>
+
+                <p>
+                    This toolkit is designed as an introductory
+                    learning resource for people who want to
+                    understand cybersecurity without needing
+                    advanced technical knowledge.
+                </p>
+
+                <div class="price">
+                    ₹499
+                </div>
+
+                <!-- DEMO CTA -->
+
+                <a href="#purchase" class="btn">
+                    Buy Now
+                </a>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="shield">
+                    🛡️
+                </div>
+
+                <h3>
+                    Cybersecurity Fundamentals
+                </h3>
+
+                <p>
+                    Learn. Understand. Protect.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHAT YOU LEARN -->
+
+<section>
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                What You Will Learn
+            </h2>
+
+            <p>
+                Core cybersecurity topics for beginners.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Cybersecurity Fundamentals
+                </h3>
+
+                <p>
+                    Understand cybersecurity, digital security,
+                    common risks and the importance of protecting
+                    your information.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎣
+                </div>
+
+                <h3>
+                    Phishing Awareness
+                </h3>
+
+                <p>
+                    Learn how suspicious emails, messages and
+                    websites can attempt to trick users.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🔑
+                </div>
+
+                <h3>
+                    Password Security
+                </h3>
+
+                <p>
+                    Learn basic principles for creating and
+                    maintaining stronger account security.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Safe Browsing
+                </h3>
+
+                <p>
+                    Understand safer browsing habits and how
+                    to approach unfamiliar websites and links.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📱
+                </div>
+
+                <h3>
+                    Mobile Security
+                </h3>
+
+                <p>
+                    Learn basic security practices for
+                    smartphones and everyday digital services.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🚨
+                </div>
+
+                <h3>
+                    Scam Awareness
+                </h3>
+
+                <p>
+                    Understand common warning signs associated
+                    with suspicious online requests and scams.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INCLUDED -->
+
+<section>
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                What's Included
+            </h2>
+
+            <p>
+                The beginner-focused toolkit covers:
+            </p>
+
+        </div>
+
+
+        <div class="checklist">
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Cybersecurity fundamentals and terminology
+                </span>
+
+            </div>
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Common online threats explained simply
+                </span>
+
+            </div>
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Password and account security basics
+                </span>
+
+            </div>
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Phishing and suspicious-link awareness
+                </span>
+
+            </div>
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Safe browsing and digital hygiene
+                </span>
+
+            </div>
+
+
+            <div class="check">
+
+                <span class="check-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Beginner-friendly cybersecurity guidance
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHO IS IT FOR -->
+
+<section>
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                Who Is This For?
+            </h2>
+
+            <p>
+                No advanced cybersecurity knowledge required.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Students
+                </h3>
+
+                <p>
+                    Useful for students who want to build
+                    foundational cybersecurity knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    💻
+                </div>
+
+                <h3>
+                    Beginners
+                </h3>
+
+                <p>
+                    Designed for people starting their journey
+                    into cybersecurity and digital safety.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    👨‍💼
+                </div>
+
+                <h3>
+                    Digital Users
+                </h3>
+
+                <p>
+                    Helpful for anyone who wants to understand
+                    everyday online security risks.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Future Learners
+                </h3>
+
+                <p>
+                    A starting point before moving into more
+                    advanced cybersecurity learning.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                Toolkit FAQ
+            </h2>
+
+            <p>
+                Common questions.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+
+            <details>
+
+                <summary>
+                    Is this toolkit suitable for complete beginners?
+                </summary>
+
+                <p>
+                    Yes. The content is intended as an introductory
+                    cybersecurity learning resource.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Do I need programming knowledge?
+                </summary>
+
+                <p>
+                    No advanced programming knowledge is required
+                    for the beginner-focused material.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is this a cybersecurity certification?
+                </summary>
+
+                <p>
+                    No. This is an educational digital resource,
+                    not a professional certification.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How will I receive the toolkit?
+                </summary>
+
+                <p>
+                    Digital delivery should be configured before
+                    real purchases are accepted. The current
+                    Buy Now button is a demo.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is the ₹499 payment system active?
+                </summary>
+
+                <p>
+                    No. The current website contains a demo
+                    purchase button. A legitimate payment gateway
+                    and delivery system must be connected before
+                    accepting payments.
+                </p>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PURCHASE CTA -->
+
+<section id="purchase">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                Ready to Start Learning?
+            </h2>
+
+            <p>
+                Explore the Cybersecurity Beginner Toolkit
+                and start building your understanding of
+                digital security.
+            </p>
+
+            <!-- DEMO BUTTON -->
+
+            <a href="index.html" class="btn">
+                Back to Sion-Ztech
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer">
+
+        <div>
+            © 2026 Sion-Ztech. All rights reserved.
+        </div>
+
+        <div>
+            Technology • Cybersecurity • Digital Solutions
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
