@@ -698,106 +698,49 @@
          JAVASCRIPT
     ========================== -->
 
-    <script>
+<script>
 
-        const contactForm =
-            document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
 
-        const successMessage =
-            document.getElementById("successMessage");
+contactForm.addEventListener("submit", function(event) {
 
+    event.preventDefault();
 
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-                event.preventDefault();
+    if (!name || !email || !message) {
+        return;
+    }
 
+    const subject =
+        "Sion-Ztech Website Enquiry - " + name;
 
-                const name =
-                    document
-                        .getElementById("name")
-                        .value
-                        .trim();
+    const body =
+        "Hello Sion-Ztech,\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" +
+        message + "\n\n" +
+        "Sent from the Sion-Ztech website.";
 
+    const gmailURL =
+        "https://mail.google.com/mail/?view=cm" +
+        "&fs=1" +
+        "&to=" + encodeURIComponent("raj20078oj@gmail.com") +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
 
-                const email =
-                    document
-                        .getElementById("email")
-                        .value
-                        .trim();
+    successMessage.style.display = "block";
 
+    setTimeout(function() {
+        window.open(gmailURL, "_blank");
+    }, 500);
 
-                const message =
-                    document
-                        .getElementById("message")
-                        .value
-                        .trim();
+});
 
-
-                /* CHECK FORM */
-
-                if (!name || !email || !message) {
-
-                    return;
-
-                }
-
-
-                /* EMAIL SUBJECT */
-
-                const subject =
-                    encodeURIComponent(
-                        "Sion-Ztech Website Enquiry - " +
-                        name
-                    );
-
-
-                /* EMAIL BODY */
-
-                const body =
-                    encodeURIComponent(
-                        "Hello Sion-Ztech," +
-                        "\n\n" +
-                        "Name: " +
-                        name +
-                        "\n" +
-                        "Email: " +
-                        email +
-                        "\n\n" +
-                        "Message:" +
-                        "\n" +
-                        message +
-                        "\n\n" +
-                        "Sent from the Sion-Ztech website."
-                    );
-
-
-                /* MAILTO */
-
-                const mailto =
-                    "mailto:raj20078oj@gmail.com" +
-                    "?subject=" +
-                    subject +
-                    "&body=" +
-                    body;
-
-
-                /* SHOW MESSAGE */
-
-                successMessage.style.display =
-                    "block";
-
-
-                /* OPEN EMAIL APPLICATION */
-
-                window.location.href =
-                    mailto;
-
-            }
-        );
-
-    </script>
-
+</script>
 </body>
 </html>
