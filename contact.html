@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact Sion-Ztech for technology, cybersecurity and digital solution enquiries.">
+
+    <title>Contact | Sion-Ztech</title>
+
+    <style>
+        :root {
+            --bg:#070b14;
+            --card:#0e1726;
+            --text:#f3f7ff;
+            --muted:#9baac0;
+            --line:#20334d;
+            --blue:#3b82f6;
+            --cyan:#22d3ee;
+        }
+
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html {
+            scroll-behavior:smooth;
+        }
+
+        body {
+            font-family:Arial,Helvetica,sans-serif;
+            background:
+                radial-gradient(
+                    circle at 80% 5%,
+                    rgba(34,211,238,.12),
+                    transparent 30%
+                ),
+                var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+
+        a {
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .container {
+            width:min(1050px,92%);
+            margin:auto;
+        }
+
+        nav {
+            border-bottom:1px solid var(--line);
+            background:rgba(7,11,20,.9);
+        }
+
+        .nav {
+            height:70px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .logo {
+            font-size:24px;
+            font-weight:800;
+        }
+
+        .logo span {
+            color:var(--cyan);
+        }
+
+        .back {
+            color:#b8c7da;
+            font-size:14px;
+        }
+
+        .hero {
+            text-align:center;
+            padding:85px 0 55px;
+        }
+
+        .hero h1 {
+            font-size:55px;
+            margin-bottom:15px;
+        }
+
+        .hero p {
+            color:var(--muted);
+            max-width:650px;
+            margin:auto;
+        }
+
+        .gradient {
+            background:linear-gradient(90deg,#fff,#6de4ff);
+            -webkit-background-clip:text;
+            background-clip:text;
+            color:transparent;
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:25px;
+        }
+
+        .card {
+            background:var(--card);
+            border:1px solid var(--line);
+            border-radius:18px;
+            padding:30px;
+        }
+
+        .card h2 {
+            margin-bottom:12px;
+        }
+
+        .card p {
+            color:var(--muted);
+        }
+
+        .info {
+            margin-top:25px;
+        }
+
+        .info-box {
+            padding:16px;
+            margin-bottom:12px;
+            border:1px solid var(--line);
+            border-radius:12px;
+            background:#091321;
+        }
+
+        .info-box strong {
+            display:block;
+            margin-bottom:4px;
+        }
+
+        form {
+            margin-top:20px;
+        }
+
+        label {
+            display:block;
+            margin:15px 0 7px;
+            font-size:14px;
+        }
+
+        input,
+        textarea {
+            width:100%;
+            padding:13px;
+            border-radius:9px;
+            border:1px solid var(--line);
+            background:#091321;
+            color:white;
+            outline:none;
+            font-family:inherit;
+        }
+
+        textarea {
+            min-height:140px;
+            resize:vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color:var(--cyan);
+        }
+
+        .btn {
+            display:inline-block;
+            margin-top:20px;
+            padding:13px 22px;
+            border-radius:10px;
+            background:linear-gradient(135deg,var(--blue),var(--cyan));
+            color:white;
+            font-weight:700;
+            border:0;
+            cursor:pointer;
+        }
+
+        .notice {
+            margin-top:15px;
+            color:#8292a8;
+            font-size:12px;
+        }
+
+        footer {
+            margin-top:70px;
+            padding:28px 0;
+            border-top:1px solid var(--line);
+            color:#8494aa;
+            font-size:13px;
+        }
+
+        .footer {
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        @media(max-width:750px) {
+            .contact-grid {
+                grid-template-columns:1fr;
+            }
+
+            .hero h1 {
+                font-size:42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            Sion-<span>Ztech</span>
+        </a>
+
+        <a href="index.html" class="back">
+            ← Back to Home
+        </a>
+
+    </div>
+</nav>
+
+
+<header class="hero">
+
+    <div class="container">
+
+        <h1>
+            Contact <span class="gradient">Sion-Ztech</span>
+        </h1>
+
+        <p>
+            Have a question about our cybersecurity resources,
+            technology projects or digital solutions?
+            Get in touch with us.
+        </p>
+
+    </div>
+
+</header>
+
+
+<section>
+
+    <div class="container contact-grid">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="card">
+
+            <h2>
+                Get in Touch
+            </h2>
+
+            <p>
+                For general enquiries, product questions
+                or collaboration opportunities, use the
+                contact details provided here.
+            </p>
+
+            <div class="info">
+
+                <div class="info-box">
+
+                    <strong>
+                        📧 Email
+                    </strong>
+
+                    <span>
+                        YOUR-EMAIL@example.com
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        🌐 Website
+                    </strong>
+
+                    <span>
+                        Sion-Ztech
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        🔐 Focus
+                    </strong>
+
+                    <span>
+                        Technology • Cybersecurity •
+                        Digital Solutions
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="card">
+
+            <h2>
+                Send a Message
+            </h2>
+
+            <p>
+                This form is currently a front-end demo.
+                Connect it to a legitimate form service
+                before using it for real submissions.
+            </p>
+
+            <form
+                onsubmit="return showMessage();"
+            >
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Send Message
+                </button>
+
+                <div class="notice">
+                    Demo form — no message is currently
+                    sent to a server.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="container footer">
+
+        <div>
+            © 2026 Sion-Ztech. All rights reserved.
+        </div>
+
+        <div>
+            Technology • Cybersecurity • Digital Solutions
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function showMessage() {
+
+    alert(
+        "Thank you! This contact form is currently a demo. " +
+        "Please configure a form service before accepting real messages."
+    );
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>
