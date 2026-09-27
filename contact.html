@@ -11,221 +11,378 @@
 
     <style>
         :root {
-            --bg:#070b14;
-            --card:#0e1726;
-            --text:#f3f7ff;
-            --muted:#9baac0;
-            --line:#20334d;
-            --blue:#3b82f6;
-            --cyan:#22d3ee;
+            --bg: #070b14;
+            --card: #0e1726;
+            --card2: #091321;
+            --text: #f3f7ff;
+            --muted: #9baac0;
+            --line: #20334d;
+            --blue: #3b82f6;
+            --cyan: #22d3ee;
+            --success: #4ade80;
         }
 
         * {
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html {
-            scroll-behavior:smooth;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family:Arial,Helvetica,sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background:
                 radial-gradient(
                     circle at 80% 5%,
-                    rgba(34,211,238,.12),
+                    rgba(34, 211, 238, .12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(59, 130, 246, .08),
                     transparent 30%
                 ),
                 var(--bg);
-            color:var(--text);
-            line-height:1.6;
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
         }
 
         a {
-            text-decoration:none;
-            color:inherit;
+            text-decoration: none;
+            color: inherit;
         }
 
         .container {
-            width:min(1050px,92%);
-            margin:auto;
+            width: min(1050px, 92%);
+            margin: auto;
         }
 
+        /* NAVBAR */
+
         nav {
-            border-bottom:1px solid var(--line);
-            background:rgba(7,11,20,.9);
+            border-bottom: 1px solid var(--line);
+            background: rgba(7, 11, 20, .92);
         }
 
         .nav {
-            height:70px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
-            font-size:24px;
-            font-weight:800;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.5px;
         }
 
         .logo span {
-            color:var(--cyan);
+            color: var(--cyan);
         }
 
         .back {
-            color:#b8c7da;
-            font-size:14px;
+            color: #b8c7da;
+            font-size: 14px;
+            transition: .2s;
         }
 
+        .back:hover {
+            color: white;
+        }
+
+        /* HERO */
+
         .hero {
-            text-align:center;
-            padding:85px 0 55px;
+            text-align: center;
+            padding: 85px 0 55px;
         }
 
         .hero h1 {
-            font-size:55px;
-            margin-bottom:15px;
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 18px;
         }
 
         .hero p {
-            color:var(--muted);
-            max-width:650px;
-            margin:auto;
+            color: var(--muted);
+            max-width: 680px;
+            margin: auto;
+            font-size: 16px;
         }
 
         .gradient {
-            background:linear-gradient(90deg,#fff,#6de4ff);
-            -webkit-background-clip:text;
-            background-clip:text;
-            color:transparent;
+            background: linear-gradient(90deg, #fff, #6de4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
+        /* CONTACT GRID */
+
         .contact-grid {
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding-bottom: 30px;
         }
 
         .card {
-            background:var(--card);
-            border:1px solid var(--line);
-            border-radius:18px;
-            padding:30px;
+            background: rgba(14, 23, 38, .94);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, .18);
         }
 
         .card h2 {
-            margin-bottom:12px;
+            margin-bottom: 12px;
+            font-size: 25px;
         }
 
-        .card p {
-            color:var(--muted);
+        .card > p {
+            color: var(--muted);
+            font-size: 14px;
         }
+
+        /* CONTACT INFO */
 
         .info {
-            margin-top:25px;
+            margin-top: 25px;
         }
 
         .info-box {
-            padding:16px;
-            margin-bottom:12px;
-            border:1px solid var(--line);
-            border-radius:12px;
-            background:#091321;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--card2);
+            transition: .2s;
+        }
+
+        .info-box:hover {
+            border-color: rgba(34, 211, 238, .45);
+            transform: translateY(-2px);
         }
 
         .info-box strong {
-            display:block;
-            margin-bottom:4px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-box span {
+            color: #c7d3e4;
+            font-size: 14px;
         }
 
         .email-link {
-            color:var(--cyan);
+            color: var(--cyan);
+            font-size: 14px;
         }
 
         .email-link:hover {
-            text-decoration:underline;
+            text-decoration: underline;
         }
 
+        /* FORM */
+
         form {
-            margin-top:20px;
+            margin-top: 20px;
         }
 
         label {
-            display:block;
-            margin:15px 0 7px;
-            font-size:14px;
+            display: block;
+            margin: 15px 0 7px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         input,
         textarea {
-            width:100%;
-            padding:13px;
-            border-radius:9px;
-            border:1px solid var(--line);
-            background:#091321;
-            color:white;
-            outline:none;
-            font-family:inherit;
+            width: 100%;
+            padding: 13px;
+            border-radius: 9px;
+            border: 1px solid var(--line);
+            background: var(--card2);
+            color: white;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            transition: .2s;
         }
 
-        textarea {
-            min-height:140px;
-            resize:vertical;
+        input::placeholder,
+        textarea::placeholder {
+            color: #68788e;
         }
 
         input:focus,
         textarea:focus {
-            border-color:var(--cyan);
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, .08);
+        }
+
+        textarea {
+            min-height: 145px;
+            resize: vertical;
         }
 
         .btn {
-            display:inline-block;
-            margin-top:20px;
-            padding:13px 22px;
-            border-radius:10px;
-            background:linear-gradient(135deg,var(--blue),var(--cyan));
-            color:white;
-            font-weight:700;
-            border:0;
-            cursor:pointer;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 22px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            color: white;
+            font-weight: 700;
+            border: 0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, .18);
+        }
+
+        .btn:active {
+            transform: translateY(0);
         }
 
         .notice {
-            margin-top:15px;
-            color:#8292a8;
-            font-size:12px;
+            margin-top: 15px;
+            color: #8292a8;
+            font-size: 12px;
         }
 
+        .privacy-note {
+            margin-top: 8px;
+            color: #66768d;
+            font-size: 11px;
+        }
+
+        /* FOOTER */
+
         footer {
-            margin-top:70px;
-            padding:28px 0;
-            border-top:1px solid var(--line);
-            color:#8494aa;
-            font-size:13px;
+            margin-top: 45px;
+            padding: 28px 0;
+            border-top: 1px solid var(--line);
+            color: #8494aa;
+            font-size: 13px;
         }
 
         .footer {
-            display:flex;
-            justify-content:space-between;
-            gap:15px;
-            flex-wrap:wrap;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        @media(max-width:750px) {
-            .contact-grid {
-                grid-template-columns:1fr;
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #9baac0;
+            transition: .2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* SUCCESS MESSAGE */
+
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 222, 128, .3);
+            background: rgba(74, 222, 128, .07);
+            color: var(--success);
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .nav {
+                min-height: 64px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .back {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 65px 0 40px;
             }
 
             .hero h1 {
-                font-size:42px;
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
     <div class="container nav">
@@ -241,6 +398,8 @@
     </div>
 </nav>
 
+
+<!-- HERO -->
 
 <header class="hero">
 
@@ -260,6 +419,8 @@
 
 </header>
 
+
+<!-- CONTACT SECTION -->
 
 <section>
 
@@ -337,14 +498,13 @@
             </h2>
 
             <p>
-                This form is currently a front-end demo.
-                Connect it to a legitimate form service
-                before using it for real submissions.
+                Enter your details and message below.
+                Clicking Send Message will open your
+                email application with the message prepared
+                for Sion-Ztech.
             </p>
 
-            <form
-                onsubmit="return showMessage();"
-            >
+            <form id="contactForm">
 
                 <label for="name">
                     Your Name
@@ -353,7 +513,9 @@
                 <input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Enter your name"
+                    autocomplete="name"
                     required
                 >
 
@@ -365,7 +527,9 @@
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Enter your email"
+                    autocomplete="email"
                     required
                 >
 
@@ -376,6 +540,7 @@
 
                 <textarea
                     id="message"
+                    name="message"
                     placeholder="Write your message..."
                     required
                 ></textarea>
@@ -388,9 +553,24 @@
                     Send Message
                 </button>
 
+                <div
+                    id="successMessage"
+                    class="success-message"
+                >
+                    Your email message has been prepared.
+                    Please press Send in your email application
+                    to complete the submission.
+                </div>
+
                 <div class="notice">
-                    Demo form — no message is currently
-                    sent to a server.
+                    Your message will be addressed to
+                    raj20078oj@gmail.com.
+                </div>
+
+                <div class="privacy-note">
+                    Please do not include passwords,
+                    payment information or other sensitive
+                    personal information in your message.
                 </div>
 
             </form>
@@ -402,6 +582,8 @@
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <div class="container footer">
@@ -410,8 +592,24 @@
             © 2026 Sion-Ztech. All rights reserved.
         </div>
 
-        <div>
-            Technology • Cybersecurity • Digital Solutions
+        <div class="footer-links">
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+            <a href="refund.html">
+                Refund Policy
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </div>
 
     </div>
@@ -419,17 +617,54 @@
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
-function showMessage() {
+const contactForm = document.getElementById("contactForm");
 
-    alert(
-        "Thank you! This contact form is currently a demo. " +
-        "Please configure a form service before accepting real messages."
-    );
+const successMessage =
+    document.getElementById("successMessage");
 
-    return false;
-}
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        return;
+    }
+
+    const subject =
+        encodeURIComponent(
+            "Sion-Ztech Website Enquiry - " + name
+        );
+
+    const body =
+        encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+    const mailto =
+        "mailto:raj20078oj@gmail.com" +
+        "?subject=" + subject +
+        "&body=" + body;
+
+    successMessage.style.display = "block";
+
+    window.location.href = mailto;
+
+});
 
 </script>
 
